@@ -321,3 +321,197 @@ hr.hr{border:none;border-top:1px solid var(--border);margin:52px 0;}
   .cta-band,.pg-banner{padding:52px 0;}
   .nav-links{display:none;}.nav-cta{display:none;}.ham{display:block;}
 }
+
+
+/* ═══════════════════════════════════════════════════════
+   TV CODE INPUT BLOCK — Mobile Only, Attractive Design
+═══════════════════════════════════════════════════════ */
+
+/* The full code block — hidden on desktop */
+.tv-code-block {
+  display: none;
+}
+
+/* Desktop buttons — always visible on desktop */
+.desktop-btns {
+  display: flex;
+}
+
+/* ── Show code block on mobile, hide desktop btns ──── */
+@media (max-width: 700px) {
+
+  .tv-code-block {
+    display: block;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(165, 180, 252, 0.35);
+    border-radius: 16px;
+    padding: 22px 18px 20px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  /* Glow ring around the card */
+  .tv-code-block::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 17px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(165,180,252,.6), rgba(79,70,229,.3), rgba(165,180,252,.6));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Hide the desktop buttons on mobile */
+  .desktop-btns {
+    display: none;
+  }
+
+  /* ── Step label rows ─────────────────────────────── */
+  .tv-step-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .tv-step-badge {
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 9px;
+    border-radius: 100px;
+    flex-shrink: 0;
+  }
+
+  .tv-step-label {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* ── Input wrapper ───────────────────────────────── */
+  .tv-input-wrap {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 10px solid #2e77dd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .tv-input-wrap:focus-within {
+    border-color: #4f46e5;
+    box-shadow:
+      0 0 0 4px rgba(79, 70, 229, 0.25),
+      0 0 24px rgba(79, 70, 229, 0.2);
+  }
+
+  .tv-input-prefix {
+    font-size: 1.2rem;
+    padding: 0 10px 0 13px;
+    flex-shrink: 0;
+    user-select: none;
+  }
+
+  /* The actual input field */
+  .tv-hero-input {
+    display: block;          /* override any display:none from desktop rule */
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 14px 12px 14px 0;
+    font-size: 1.45rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #1a1730;
+    width: 100%;
+  }
+
+  .tv-hero-input::placeholder {
+    color: #b0b8e0;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+  }
+
+  /* Where to find code hint */
+  .tv-code-where {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.38);
+    margin: 0 0 14px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .tv-code-where strong {
+    color: rgba(165, 180, 252, 0.8);
+    font-weight: 600;
+  }
+
+  /* ── Arrow connector between steps ──────────────── */
+  .tv-step-connector {
+    text-align: center;
+    font-size: 1.3rem;
+    color: rgba(165, 180, 252, 0.5);
+    margin: 4px 0 14px;
+    line-height: 1;
+    animation: bounce-arrow 1.6s ease-in-out infinite;
+  }
+
+  @keyframes bounce-arrow {
+    0%, 100% { transform: translateY(0); opacity: .5; }
+    50%       { transform: translateY(4px); opacity: 1; }
+  }
+
+  /* ── Activate button ─────────────────────────────── */
+  .tv-activate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 10px;
+    letter-spacing: 0.01em;
+    box-shadow:
+      0 6px 20px rgba(79, 70, 229, 0.45),
+      0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s, box-shadow 0.15s;
+    animation: pulse-btn 2.5s ease-in-out infinite;
+  }
+
+  .tv-activate-btn:hover,
+  .tv-activate-btn:active {
+    transform: translateY(-2px);
+    box-shadow:
+      0 10px 28px rgba(79, 70, 229, 0.55),
+      0 4px 12px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    color: #fff;
+  }
+
+  @keyframes pulse-btn {
+    0%, 100% { box-shadow: 0 6px 20px rgba(79,70,229,.45), 0 2px 8px rgba(0,0,0,.2); }
+    50%       { box-shadow: 0 6px 28px rgba(79,70,229,.7),  0 2px 8px rgba(0,0,0,.2); }
+  }
+
+}
+/* end @media mobile */
