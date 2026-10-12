@@ -6,6 +6,58 @@
 <meta name="description" content="StreamPro — fast TV activation, subscription setup, troubleshooting and account help for viewers across Canada and North America. Independent TV resource."/>
 <title>StreamPro — TV Activation, Subscription & Troubleshooting | StreamPro</title>
 <link rel="stylesheet" href="style.css"/>
+
+<style>
+
+	.callbar{
+	  position:fixed;
+	  bottom:0;
+	  left:0;
+	  width:100%;
+	  background:#ffffff;
+	  text-align:center;
+	  padding:14px 0px;
+	  z-index:999999;
+	  box-shadow:0 -3px 12px rgba(0,0,0,0.15);
+	}
+
+	.callbar a{
+	  color:#0e6db9;
+	  font-weight:700;
+	  text-decoration:none;
+	  font-size:28px;
+	}
+
+	.callbar span{
+	  display:inline;
+	}
+
+	/* mobile two lines */
+	@media(max-width:768px){
+	  .callbar a{
+		font-size:20px;
+		line-height:1.4;
+	  }
+	  
+	  .t1{
+		font-size: 15px; !important
+		}
+		
+		.callbar .t1{
+		  color:#000 !important;   /* Need Help text = black */
+		}
+		
+			.callbar .t2{
+		  color:#0055e9 !important; /* Number = blue */
+		}
+	  
+	  .callbar span{
+		display:block;
+	  } 
+	}
+
+</style>
+
 </head>
 <body><nav class="site-nav" id="nav"><div class="nav-inner"><a href="index.html" class="logo"><div class="logo-icon"></div>Stream<em>Pro</em></a><ul class="nav-links"><li><a href="index.html" class="on">Home</a></li><li><a href="about.html">About</a></li></ul><a href="index.html#contact" class="nav-cta">Activate My TV</a><button class="ham" onclick="document.getElementById('mnav').classList.toggle('open')">☰</button></div><div class="mob-nav" id="mnav"><a href="index.html">Home</a><a href="about.html">About</a><a href="index.html#contact">Activate My TV</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a></div></nav>
 <!-- HERO: dark navy + indigo glow + CSS TV screen -->
@@ -15,6 +67,40 @@
       <div class="hero-badge"><span class="badge-dot"></span> TV Activation Experts</div>
       <h1>Get Your TV<br/><span>Activated &amp; Streaming</span><br/>in Minutes</h1>
       <p class="hero-sub">Fast, hassle-free TV activation, subscription setup, troubleshooting, and account management — by a team that knows television services inside out.</p>
+      <!-- TV CODE BLOCK — mobile only -->
+      <div class="tv-code-block">
+
+        <div class="tv-step-row">
+          <span class="tv-step-badge">Step 1</span>
+          <span class="tv-step-label">Enter your TV activation code</span>
+        </div>
+
+        <div class="tv-input-wrap">
+          <span class="tv-input-prefix">📺</span>
+          <input
+            type="text"
+            class="tv-hero-input"
+            id="tvHeroInput"
+            placeholder="e.g. A1B2C3D4"
+            maxlength="12"
+            autocomplete="off"
+            inputmode="text"
+            oninput="this.value=this.value.toUpperCase()"
+          />
+        </div>
+
+        <div class="tv-step-connector">↓</div>
+
+        <div class="tv-step-row">
+          <span class="tv-step-badge">Step 2</span>
+          <span class="tv-step-label">Tap the button below</span>
+        </div>
+
+        <a href="thankyou.html" class="tv-activate-btn">
+          <span>▶</span> Activate My TV Now
+        </a>
+
+      </div>
 
       <!-- Desktop — shown on desktop, hidden on mobile -->
       <div class="hero-btns desktop-btns">
@@ -406,6 +492,14 @@
     </div>
   </div>
 </div>
+
+    <div class="callbar">
+  <a href="tel:+18444495565">
+    <span class="t1">Need Help? Talk to an Expert</span>
+    <span class="t2">+1 (844) 449-5565</span>
+  </a>
+</div>
+
 <footer class="site-footer"><div class="wrap"><div class="ft-grid"><div class="ft-brand"><div class="ft-logo"><div class="ft-logo-icon"></div>Stream<em>Pro</em></div><p>An independent TV activation and subscription information resource. Serving viewers across Canada and North America. Not affiliated with any TV provider or network.</p></div><div class="fc"><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="index.html#contact">Contact</a></li></ul></div><div class="fc"><h5>Resources</h5><ul><li><a href="index.html#services">Our Services</a></li><li><a href="index.html#plans">Subscription Plans</a></li><li><a href="index.html#how">How It Works</a></li><li><a href="index.html#faq">FAQs</a></li></ul></div><div class="fc"><h5>Legal</h5><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="disclaimer.html">Disclaimer</a></li></ul></div></div><div class="ft-bot"><p>&copy; <span id="yr"></span> StreamPro. All rights reserved. &nbsp;|&nbsp; <a href="privacy.html">Privacy</a> &nbsp;|&nbsp; <a href="terms.html">Terms</a> &nbsp;|&nbsp; <a href="disclaimer.html">Disclaimer</a></p><p style="margin-top:4px;">StreamPro is an independent informational resource. Not affiliated with any TV provider, broadcaster, or streaming network. This is an independent website.</p></div></div></footer><script>
 document.getElementById("yr").textContent=new Date().getFullYear();
 function fq(b){var i=b.closest(".faq-item"),o=i.classList.contains("open");document.querySelectorAll(".faq-item.open").forEach(function(x){x.classList.remove("open");});if(!o)i.classList.add("open");}
